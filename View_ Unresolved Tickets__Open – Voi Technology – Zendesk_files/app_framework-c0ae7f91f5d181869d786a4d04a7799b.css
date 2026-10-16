@@ -1,0 +1,781 @@
+@charset 'UTF-8';
+/* BEGIN ./activities/app_framework/stylesheets/app_framework.scss */
+/* BEGIN ./activities/app_framework/stylesheets/sidebar.scss */
+.apps .action_button_container_for_workspace {
+  margin: 20px 0 10px 5px;
+}
+
+.apps .action_buttons {
+  position: relative;
+  margin: 0 0 5px 10px;
+}
+.apps .action_buttons .action_button_container:hover + .action_button_container .count {
+  display: none;
+}
+.apps .action_buttons .action_button {
+  float: right;
+  opacity: 0.4;
+  height: 22px;
+  padding: 0 5px;
+  margin-right: 5px;
+  font-weight: 400;
+}
+.apps .action_buttons .action_button.no_pointer {
+  cursor: default;
+}
+.apps .action_buttons .action_button .action_label {
+  display: none;
+  position: absolute;
+  right: 30px;
+  /* hardcoded size to appear next to the icons */
+  height: 20px;
+  padding-right: 5px;
+}
+.apps .action_buttons .action_button .action_label,
+.apps .action_buttons .action_button .count {
+  position: absolute;
+  margin-top: -2px;
+}
+.apps .action_buttons .action_button:hover {
+  opacity: 1;
+}
+.apps .action_buttons .action_button:hover .action_label {
+  display: block;
+  z-index: 1;
+  /* overlap the temporary tde_workspaces_eap prototype */
+  background-color: var(--background-recessed);
+  /* Grey-100 */
+}
+.apps .action_buttons .action_button:hover .count {
+  display: none;
+}
+.apps .action_buttons.has_background_apps .action_button span {
+  /* hardcoded size to appear next to the icon */
+  right: 55px;
+}
+
+/*
+  Hidden Scroll bar styles start
+*/
+
+/* Ticket Workspace (React & Ember Ticket Sidebar) with Agent Workspace enabled (LTR & RTL) */
+.main_panes .with_apps_pane.with_omnipanel_pane {
+  right: 360px;
+}
+html[data-rtl-language='true'] .main_panes .with_apps_pane.pane.right.with_omnipanel_pane {
+  left: 360px;
+}
+
+/* Ticket Workspace (React Ticket Sidebar) with Agent Workspace disabled (LTR & RTL) */
+.main_panes .with_apps_pane {
+  right: 360px;
+}
+html[data-rtl-language='true'] .main_panes .with_apps_pane.pane.right {
+  left: 360px;
+}
+
+/* Ticket Workspace (Ember Ticket Sidebar) with Agent Workspace disabled (LTR & RTL) */
+.main_panes .with_apps_pane.with_apps_legacy_pane {
+  right: 370px;
+}
+html[data-rtl-language='true'] .main_panes .with_apps_pane.with_apps_legacy_pane.pane.right {
+  left: 370px;
+}
+
+/* User Workspace with Agent Workspace enabled & disabled (LTR & RTL) */
+.main_panes.user .with_apps_pane {
+  right: 370px;
+}
+html[data-rtl-language='true'] .main_panes.user .with_apps_pane.pane.right {
+  left: 370px;
+
+  [data-garden-id='navigation.product'] & {
+    left: 408px;
+  }
+}
+
+/* Organization Workspace with Agent Workspace enabled & disabled (LTR & RTL) */
+.main_panes.organization .with_apps_pane {
+  right: 370px;
+}
+html[data-rtl-language='true'] .main_panes.organization .with_apps_pane.pane.right {
+  left: 370px;
+
+  [data-garden-id='navigation.product'] & {
+    left: 408px;
+  }
+}
+
+/*
+  Hidden Scroll bar styles end
+*/
+
+/*
+  Visible Scroll bar styles start
+*/
+
+/* Ticket Workspace (React Ticket Sidebar) with Agent Workspace enabled (LTR & RTL) */
+/* Ticket Workspace (React Ticket Sidebar) with Agent Workspace disabled (LTR & RTL) */
+/* Ticket Workspace (Ember Ticket Sidebar) with Agent Workspace enabled (LTR & RTL) */
+.visiblescroll .main_panes .with_apps_pane {
+  right: 380px;
+}
+html[data-rtl-language='true'] .visiblescroll .main_panes .with_apps_pane.pane.right {
+  left: 380px;
+}
+
+/* Ticket Workspace (Ember Ticket Sidebar) with Agent Workspace disabled (LTR & RTL) */
+.visiblescroll .main_panes .with_apps_pane.with_apps_legacy_pane {
+  right: 370px;
+}
+html[data-rtl-language='true']
+  .visiblescroll
+  .main_panes
+  .with_apps_pane.with_apps_legacy_pane.pane.right {
+  left: 370px;
+}
+
+/* Ticket Workspace (React Ticket Sidebar) with Agent Workspace enabled (LTR & RTL) (macOS Only) */
+/* Ticket Workspace (React Ticket Sidebar) with Agent Workspace disabled (LTR & RTL) (macOS Only) */
+/* Ticket Workspace (Ember Ticket Sidebar) with Agent Workspace enabled (LTR & RTL) (macOS Only) */
+.visiblescroll.os-mac .main_panes .with_apps_pane {
+  right: 376px;
+}
+html[data-rtl-language='true'] .visiblescroll.os-mac .main_panes .with_apps_pane.pane.right {
+  left: 376px;
+}
+
+/* Ticket Workspace (Ember Ticket Sidebar) with Agent Workspace disabled (LTR & RTL) (macOS Only) */
+.visiblescroll.os-mac .main_panes .with_apps_pane.with_apps_legacy_pane {
+  right: 370px;
+}
+html[data-rtl-language='true']
+  .visiblescroll.os-mac
+  .main_panes
+  .with_apps_pane.with_apps_legacy_pane.pane.right {
+  left: 370px;
+}
+
+/* User Workspace with Agent Workspace enabled & disabled (LTR) */
+/* User Workspace with Agent Workspace enabled (RTL) */
+.visiblescroll .main_panes.user .with_apps_pane {
+  right: 369px;
+}
+html[data-rtl-language='true']
+  .visiblescroll
+  .main_panes.user
+  .with_apps_pane.pane.right.with_omnipanel_pane {
+  left: calc(360px + 48px);
+}
+
+/* User Workspace with Agent Workspace disabled (RTL) */
+html[data-rtl-language='true'] .visiblescroll .main_panes.user .with_apps_pane.pane.right {
+  left: 370px;
+}
+
+/* Organization Workspace with Agent Workspace enabled & disabled (LTR) */
+/* Organization Workspace with Agent Workspace enabled (RTL) */
+.visiblescroll .main_panes.organization .with_apps_pane {
+  right: 369px;
+}
+html[data-rtl-language='true']
+  .visiblescroll
+  .main_panes.organization
+  .with_apps_pane.pane.right.with_omnipanel_pane {
+  left: calc(360px + 48px);
+}
+
+/* Organization Workspace with Agent Workspace disabled (RTL) */
+html[data-rtl-language='true'] .visiblescroll .main_panes.organization .with_apps_pane.pane.right {
+  left: 370px;
+}
+
+/*
+  Visible Scroll bar styles end
+*/
+
+/* ticket, user and organization */
+.workspace.apps:not(.ticket_editor_app) {
+  background-color: var(--background-recessed);
+  /* Grey-100; */
+  position: absolute;
+  width: 370px;
+  top: 101px;
+  right: 0;
+  bottom: 50px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border-left: 1px solid var(--border-default);
+}
+
+html[data-rtl-language='true'] .workspace.apps:not(.ticket_editor_app) {
+  border-left: 0px;
+  border-right: 1px solid var(--border-default);
+  direction: rtl;
+}
+
+.workspace.apps:not(.ticket_editor_app):not(.is_active) {
+  right: -369px;
+}
+.workspace.apps:not(.ticket_editor_app) header {
+  height: auto;
+  outline: none;
+  border-top: none;
+  background-color: var(--background-default);
+}
+.workspace.apps:not(.ticket_editor_app) header h3 {
+  font-size: 15px;
+  line-height: 30px;
+}
+.workspace.apps:not(.ticket_editor_app) .app_loader {
+  background: transparent url(/agent/assets/icons/spinners/loading_2x_ff-5a32811d96bf097f7015d132aba9765f.gif) no-repeat;
+  background-size: 25px 25px;
+  display: none;
+  float: right;
+  height: 25px;
+  margin-left: 5px;
+  width: 25px;
+}
+.workspace.apps:not(.ticket_editor_app) .ember-view > .app_view_outer {
+  background: var(--background-default);
+  border: 1px var(--border-default) solid;
+  float: left;
+  margin: 0 0 10px 8px;
+  width: 350px;
+  border-radius: 5px;
+}
+.workspace.apps:not(.ticket_editor_app) .app_view {
+  padding: 10px 15px 20px;
+  overflow: auto;
+}
+.with_omnipanel .workspace.apps:not(.ticket_editor_app) .app_view {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.with_omnipanel .workspace.apps:not(.ticket_editor_app) .app-market-wrapper {
+  margin: -12px;
+}
+.workspace.apps:not(.ticket_editor_app) .app_view .modal {
+  visibility: visible;
+}
+.workspace.apps:not(.ticket_editor_app) .iframe_app_view_wrapper header {
+  margin: 0 15px;
+  padding-top: 10px;
+}
+.with_omnipanel .workspace.apps:not(.ticket_editor_app) .iframe_app_view_wrapper header {
+  margin: 0 8px;
+}
+
+/* it is flexible by default thus needed this constraint for apps with flexible property set to false or undefined */
+.main_panes.flexible_layout
+  .with_omnipanel
+  .workspace.apps:not(.ticket_editor_app)
+  .iframe_app_view_wrapper
+  .app_view_wrapper.not_flexible {
+  overflow-x: auto;
+}
+.main_panes.flexible_layout
+  .with_omnipanel
+  .workspace.apps:not(.ticket_editor_app)
+  .iframe_app_view_wrapper
+  .app_view_wrapper.not_flexible
+  .app_view {
+  width: 320px;
+}
+
+/* Get updated by flexible layout splitter when it's loaded */
+.main_panes.flexible_layout .with_omnipanel .workspace.apps:not(.ticket_editor_app) {
+  visibility: hidden;
+}
+
+.workspace.apps:not(.ticket_editor_app) .app_rating {
+  position: relative;
+  border-top: 1px solid var(--border-default);
+  /* Grey-300 */
+  padding: 5px 17px;
+  color: var(--foreground-disabled);
+  line-height: 20px;
+}
+.workspace.apps:not(.ticket_editor_app) .app_rating_outer {
+  clear: both;
+}
+.workspace.apps:not(.ticket_editor_app) .app_rating__label,
+.workspace.apps:not(.ticket_editor_app) .app_rating__confirmation,
+.workspace.apps:not(.ticket_editor_app) .app_rating__stars {
+  vertical-align: middle;
+  display: inline-block;
+  height: 20px;
+}
+.workspace.apps:not(.ticket_editor_app) .app_rating__close,
+.workspace.apps:not(.ticket_editor_app) .app_rating__star {
+  display: inline-block;
+  height: 20px;
+  cursor: pointer;
+}
+.workspace.apps:not(.ticket_editor_app) .app_rating__confirmation {
+  color: rgb(var(--green-400));
+  padding-left: 18px;
+  background: url(/agent/assets/icons/apps/green_tick-2f6bb8feec48ab0997ea05db02ea16b7.svg) 0px 2px no-repeat;
+  background-size: 15px 15px;
+}
+.workspace.apps:not(.ticket_editor_app) .app_rating__label {
+  padding-right: 5px;
+}
+.workspace.apps:not(.ticket_editor_app) .app_rating__close {
+  position: absolute;
+  right: 17px;
+  color: rgb(var(--grey-300));
+  /* Grey-300 */
+  background: url(/agent/assets/icons/apps/close-0f7c72f1f2bd7aabec9fc54f8122c2f3.svg) 7px 7px no-repeat;
+  background-size: 7px 7px;
+  width: 20px;
+}
+.workspace.apps:not(.ticket_editor_app) .app_rating__star:hover > svg path {
+  fill: rgb(var(--green-300));
+}
+.workspace.apps:not(.ticket_editor_app) hr {
+  border-top: 1px dotted rgb(var(--grey-400));
+  /* Grey-400 */
+}
+.workspace.apps:not(.ticket_editor_app) .empty {
+  margin-top: 55px;
+  text-align: center;
+  font-weight: 600;
+}
+.workspace.apps:not(.ticket_editor_app) .empty img {
+  width: 55px;
+  height: 55px;
+}
+.workspace.apps:not(.ticket_editor_app) .empty a {
+  color: var(--foreground-disabled);
+  /* Grey-500 */
+  padding: 10px 40px;
+  font-size: 15px;
+}
+.workspace.apps:not(.ticket_editor_app) .empty p {
+  margin: 45px 65px 30px;
+  color: rgb(var(--grey-400));
+  /* Grey-400 */
+  font-size: 15px;
+}
+.workspace.apps:not(.ticket_editor_app) footer {
+  border-left: none;
+}
+
+.with_omnipanel .workspace.apps:not(.ticket_editor_app) {
+  padding: 12px;
+}
+
+.user .workspace.apps,
+.organization .workspace.apps {
+  bottom: 0;
+}
+
+/* END ./activities/app_framework/stylesheets/sidebar.scss */
+/* BEGIN ./activities/app_framework/stylesheets/ticket_editor.scss */
+.ticket_editor_app.apps {
+  position: absolute;
+  border: 1px solid var(--border-default);
+  /* Grey-300 */
+  padding: 0;
+  background: var(--background-default);
+  box-shadow: 1px 1px 3px var(--shadow-small);
+  z-index: 20;
+  /* Set the z-index just above flexible layout in context panel splitter */
+  right: auto;
+  bottom: auto;
+}
+.ticket_editor_app.apps:not(.is_visible) {
+  display: none;
+}
+.ticket_editor_app.apps:not(.is_active) {
+  right: 'auto';
+}
+.ticket_editor_app.apps:before {
+  margin-left: -7px;
+  top: 100%;
+  left: 23px;
+  border: 7px solid transparent;
+  border-top: 7px solid var(--border-default);
+  /* Grey-300 */
+  content: ' ';
+  position: absolute;
+}
+.ticket_editor_app.apps:after {
+  margin-left: -6px;
+  top: 100%;
+  left: 23px;
+  border: 6px solid transparent;
+  border-top: 6px solid var(--background-default);
+  content: ' ';
+  position: absolute;
+}
+.ticket_editor_app.apps,
+.ticket_editor_app.apps iframe {
+  border-radius: 3px;
+}
+.ticket_editor_app.apps div,
+.ticket_editor_app.apps span,
+.ticket_editor_app.apps iframe {
+  height: inherit;
+}
+.ticket_editor_app.omnicomposer-app:before {
+  display: none;
+}
+.ticket_editor_app.omnicomposer-app:after {
+  display: none;
+}
+
+/* END ./activities/app_framework/stylesheets/ticket_editor.scss */
+/* BEGIN ./activities/app_framework/stylesheets/nav_bar.scss */
+.apps.main_panes .app_pane_header,
+.apps.main_panes .apps_nav_bar > header {
+  border-style: solid;
+}
+.apps.main_panes .app_pane_header .app-warning-icon,
+.apps.main_panes .apps_nav_bar > header .app-warning-icon {
+  margin-top: 8px;
+  margin-right: 8px;
+}
+.apps.main_panes .app_pane_header .logo,
+.apps.main_panes .apps_nav_bar > header .logo {
+  float: left;
+  margin: 12px 10px;
+}
+.apps.main_panes .app_pane_header h1,
+.apps.main_panes .app_pane_header h3,
+.apps.main_panes .apps_nav_bar > header h1,
+.apps.main_panes .apps_nav_bar > header h3 {
+  height: 49px;
+  line-height: 49px;
+  padding: 0 0 0 20px;
+  color: var(--foreground-default);
+  /* Grey-800 */
+  margin: 0;
+}
+.apps.main_panes .app_pane_header h3,
+.apps.main_panes .apps_nav_bar > header h3 {
+  font-size: 14px;
+}
+
+.apps.main_panes .iframe_app_view_wrapper .app_view_wrapper,
+.apps.main_panes .iframe_app_view_wrapper .app_view,
+.apps.main_panes .iframe_app_view_wrapper iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.apps.main_panes > .app_view_wrapper .apps_nav_bar {
+  margin-top: 49px;
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  left: 60px;
+  overflow: auto;
+}
+.apps.main_panes > .app_view_wrapper .apps_nav_bar > header {
+  position: fixed;
+}
+.apps.main_panes > .app_view_wrapper .apps_nav_bar > footer {
+  position: static;
+  background: none;
+  border: none;
+  height: auto;
+}
+.apps.main_panes > .app_view_wrapper .apps_nav_bar .pane {
+  border: none;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.apps_nav_bar a.btn_apps {
+  background-image: none;
+  display: block;
+  margin: 6px 0;
+  text-align: center;
+}
+.apps_nav_bar a.btn_apps img {
+  height: 34px;
+  max-width: 85%;
+}
+
+.nav-bar-apps-tray {
+  position: relative;
+}
+
+.nav-bar-apps-tray__menu {
+  position: absolute;
+  left: 60px;
+  bottom: 8px;
+  padding: 0;
+  font-size: 14px;
+}
+.nav-bar-apps-tray__menu .nav-bar-apps-tray-overflow {
+  max-height: 280px;
+  padding: 0;
+  overflow-y: auto;
+}
+.nav-bar-apps-tray__menu:before,
+.nav-bar-apps-tray__menu:after {
+  top: auto;
+  bottom: 10px;
+}
+.nav-bar-apps-tray__menu li.apps_tray_link {
+  cursor: pointer;
+  padding: 10px 0 10px 20px;
+  color: var(--foreground-default);
+  /* Grey-800 */
+  position: relative;
+  display: flex;
+}
+.nav-bar-apps-tray__menu li.apps_tray_link div.title {
+  position: absolute;
+  left: 70px;
+  top: 15px;
+}
+.nav-bar-apps-tray__menu li.apps_tray_link img {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.nav-bar-apps-tray__menu li.apps_tray_link svg {
+  width: 18px;
+  height: 18px;
+  padding: 6px;
+  fill: var(--foreground-disabled);
+  /* Grey-500 */
+}
+.nav-bar-apps-tray__menu li.apps_tray_link:hover:not(.active) {
+  background-color: var(--background-recessed);
+  /* Grey-100; */
+}
+.nav-bar-apps-tray__menu li.apps_tray_link:hover:not(.active) svg {
+  fill: var(--foreground-disabled);
+}
+.nav-bar-apps-tray__menu li.apps_tray_link.active {
+  background-color: rgb(var(--grey-200));
+  /* Grey-200; */
+}
+.nav-bar-apps-tray__menu li.apps_tray_link.active svg {
+  fill: var(--foreground-default);
+  /* Grey-800 */
+}
+
+/* END ./activities/app_framework/stylesheets/nav_bar.scss */
+/* BEGIN ./activities/app_framework/stylesheets/top_bar.scss */
+#branding_header #user_options .apps_group .apps_popover {
+  margin-top: 45px;
+  text-align: left;
+  height: 0;
+  width: 0;
+  display: block;
+}
+html[data-rtl-language='true'] #branding_header #user_options .apps_group .apps_popover {
+  text-align: right;
+}
+#branding_header #user_options .apps_group .apps_popover .app_view_outer {
+  background-color: var(--background-default);
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+#branding_header #user_options .apps_group .apps_popover .app_view_wrapper,
+#branding_header #user_options .apps_group .apps_popover .app_view {
+  width: 100%;
+  height: 100%;
+}
+
+/* v1 apps may override these so they can't be too specific */
+.apps_popover .app_view > header,
+.apps_popover .iframe_app_view_wrapper > header {
+  height: 37px;
+  border-bottom: 1px solid var(--border-subtle);
+  /* Grey-200 */
+  margin-bottom: 0;
+  background-color: var(--background-recessed);
+}
+.apps_popover .app_view > header h3,
+.apps_popover .iframe_app_view_wrapper > header h3 {
+  padding: 12px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px;
+}
+.apps_popover .app_view > header .logo,
+.apps_popover .iframe_app_view_wrapper > header .logo {
+  margin: 5px 10px;
+}
+
+.apps_popover .app_view > footer {
+  padding: 0 10px 10px 10px;
+}
+
+.apps_popover [data-main] {
+  background-color: var(--background-default);
+  padding: 10px;
+}
+
+/* May be obsolete and/or unneeded */
+.apps_top_bar.btn img {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+}
+
+/* END ./activities/app_framework/stylesheets/top_bar.scss */
+/* BEGIN ./activities/app_framework/stylesheets/modal.scss */
+.modal .iframe_app_view_wrapper header .logo {
+  float: left;
+  padding-right: 10px;
+}
+
+.modal .iframe_app_view_wrapper .modal-body.app_view_wrapper {
+  /* third parties can resize iframe as they like. We advertised max dimensions */
+  /* of 80vh and 80vw, so to make it nice we: */
+  /* 1. avoid horizontal scrolling if the width is at or below this value */
+  /* 2. avoid vertical scroll past the header. */
+  max-height: 80vh;
+  max-width: 80vw;
+}
+
+.modal.in.modal-resizable {
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: auto;
+}
+
+/* END ./activities/app_framework/stylesheets/modal.scss */
+.app_pane [data-zd-type],
+.app_view [data-zd-type] {
+  display: none;
+}
+
+.apps .app-warning-icon {
+  cursor: pointer;
+  float: right;
+  margin-left: 2px;
+  padding: 5px;
+}
+
+.apps input[type='text'],
+.apps input[type='password'],
+.apps input[type='number'],
+.apps input[type='url'],
+.apps input[type='email'],
+.apps input[type='tel'],
+.apps textarea {
+  width: inherit;
+  border: 1px solid var(--border-default);
+  /* Grey-300 */
+  border-radius: 2px;
+  box-shadow: inset 0 0 1px 0 var(--border-default);
+  /* Grey-300 */
+  padding: 5px;
+}
+.apps input[type='text']:focus,
+.apps input[type='password']:focus,
+.apps input[type='number']:focus,
+.apps input[type='url']:focus,
+.apps input[type='email']:focus,
+.apps input[type='tel']:focus,
+.apps textarea:focus {
+  border-color: rgb(var(--green-400)) !important;
+  box-shadow: 0 0 3px rgb(var(--green-400)) !important;
+  outline: thick none !important;
+}
+
+.apps .iframe_app_view_wrapper .app_view > iframe {
+  display: block;
+}
+
+.apps [data-main] header {
+  height: auto;
+  background-color: var(--background-default);
+  outline: none;
+  border-top: none;
+}
+.apps [data-main] header h1 {
+  font-size: 30px;
+  line-height: 36px;
+  height: auto;
+  padding: 0;
+}
+
+.apps header {
+  border-bottom: 1px dotted var(--border-default);
+  /* Grey-400 */
+  margin-bottom: 12px;
+  min-height: initial;
+}
+.apps header .logo {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  float: right;
+  height: 25px;
+  width: 25px;
+}
+html[data-rtl-language='true'] .apps header .logo {
+  float: left;
+}
+
+.apps footer {
+  background: none;
+  border: 0;
+  padding-top: 10px;
+}
+
+.apps .spinner {
+  background: transparent no-repeat center;
+  display: block;
+  margin: 15px auto;
+}
+.apps .spinner.dotted {
+  background-image: url(/agent/assets/icons/spinners/dotted_bar-b0db0a3419081443c8a7ae0747b9937d.gif);
+  height: 11px;
+}
+.apps .spinner.lotus {
+  background-image: url(/agent/assets/icons/spinners/spinner_lotus_green-5bccd2dcaa98499abc5b454b302aa0cc.gif);
+  height: 60px;
+}
+
+.apps select {
+  border: 1px solid var(--border-default);
+  /* Grey-300 */
+}
+
+.apps__workspace__sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 16px 12px 16px 20px;
+}
+
+.apps__workspace__sidebar-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+html[data-rtl-language='true'] .apps__workspace__sidebar-header {
+  padding: 16px 20px 16px 12px;
+}
+
+html[data-rtl-language='true'] .with_omnipanel .apps__workspace__sidebar-header {
+  padding: 4px 8px 26px 0px;
+}
+
+.with_omnipanel .apps__workspace__sidebar-header {
+  padding: 4px 0px 26px 8px;
+}
+
+/* END ./activities/app_framework/stylesheets/app_framework.scss */

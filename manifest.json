@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Zenduck",
+  "version": "1.0",
+  "description": "Monitor new Zendesk tickets",
+  "permissions": ["storage", "notifications", "alarms", "scripting", "tabs", "offscreen"],
+  "host_permissions": ["https://*.zendesk.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["sounds/*.wav"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

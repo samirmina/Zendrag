@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Zenduck</h2>
+      <button id="settings-toggle" class="icon-btn" aria-label="Settings">&#9881;</button>
+    </div>
+
+    <div id="status">Loading...</div>
+
+    <div id="views-container">
+      <p class="hint">Select views to monitor:</p>
+      <div id="views-list"></div>
+    </div>
+
+    <button id="toggle-btn" disabled>Start Monitoring</button>
+
+    <div id="history-section">
+      <div class="history-header">
+        <span>Ticket History</span>
+        <button id="clear-history-btn" class="text-btn">Clear</button>
+      </div>
+      <div id="ticket-history"></div>
+    </div>
+
+    <div id="settings-panel" class="settings-panel hidden">
+      <div class="settings-header">
+        <span>Settings</span>
+        <button id="settings-close" class="icon-btn" aria-label="Close settings">&#10005;</button>
+      </div>
+      <div class="settings-body">
+        <div class="setting-group">
+          <label class="setting-label" for="poll-interval">Polling Interval</label>
+          <select id="poll-interval" class="setting-select">
+            <option value="15">15 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="40">40 seconds</option>
+            <option value="60" selected>60 seconds</option>
+          </select>
+          <div class="setting-hint">Lower intervals suit 1-2 views. Too low may trigger Zendesk rate limits.</div>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label" for="idle-pause">Idle Pause</label>
+          <select id="idle-pause" class="setting-select">
+            <option value="enabled" selected>Enabled</option>
+            <option value="disabled">Disabled</option>
+          </select>
+          <div class="setting-hint">Pause monitoring when no Zendesk tab is available.</div>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label" for="max-pages">Background Max Pages</label>
+          <select id="max-pages" class="setting-select">
+            <option value="1">1 page (~30 tickets)</option>
+            <option value="3" selected>3 pages (~90 tickets)</option>
+            <option value="5">5 pages (~150 tickets)</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label" for="inter-page-delay">Inter-page Delay</label>
+          <select id="inter-page-delay" class="setting-select">
+            <option value="100">100ms</option>
+            <option value="250" selected>250ms</option>
+            <option value="500">500ms</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label" for="sound-alert">Sound Alert</label>
+          <select id="sound-alert" class="setting-select">
+            <option value="enabled">Enabled</option>
+            <option value="disabled" selected>Disabled</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label" for="notification-behavior">Notification Behavior</label>
+          <select id="notification-behavior" class="setting-select">
+            <option value="per-ticket" selected>One notification per new ticket</option>
+            <option value="summary">Summary notification per poll</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label" for="notification-persistence">Notification Persistence</label>
+          <select id="notification-persistence" class="setting-select">
+            <option value="auto-close" selected>Auto close after 5 seconds</option>
+            <option value="sticky">Keep open until interacted</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label" for="history-capacity">Ticket History Capacity</label>
+          <select id="history-capacity" class="setting-select">
+            <option value="50">50 tickets</option>
+            <option value="100" selected>100 tickets</option>
+            <option value="200">200 tickets</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <button id="clear-cache-btn" class="text-btn">Clear Metadata Cache</button>
+          <div class="setting-hint">Forget cached system metadata so it is re-fetched from Zendesk on next use.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
